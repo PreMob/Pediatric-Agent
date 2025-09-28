@@ -1,0 +1,29 @@
+[project]
+name = "pediatric-agent-backend"
+version = "0.1.0"
+description = "Backend for Pediatric-Agent"
+authors = [
+    {name = "Preet"}
+]
+readme = "README.md"
+requires-python = "^3.10"
+dependencies = [
+    "fastapi (>=0.117.1,<0.118.0)",
+    "uvicorn (>=0.37.0,<0.38.0)",
+    "langchain (>=0.3.27,<0.4.0)",
+    "langgraph (>=0.6.7,<0.7.0)",
+    "pydantic (>=2.11.9,<3.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
+    "sqlalchemy (>=2.0.43,<3.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "alembic (>=1.16.5,<2.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "python-jose[cryptography] (>=3.5.0,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
