@@ -1,7 +1,6 @@
-# core/v1/models/child.py
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from Backend.app.core.v1.db import Base
+from app.core.v1.db import Base
 
 class Child(Base):
     __tablename__ = "children"
