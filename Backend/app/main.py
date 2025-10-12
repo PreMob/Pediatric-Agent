@@ -1,12 +1,20 @@
 from fastapi import FastAPI
 import asyncio
-from app.api.v1.routes import health
+from app.api.v1.routes import health, user, child
 from app.core.v1.db import mysql_engine, Base
-from app.api.v1.schemas import User, Child
+from app.api.v1.schemas.user.user import User
+from app.api.v1.schemas.user.child import Child
+from app.api.v1.middlewares.error_handler import ErrorHandlerMiddleware
 
 app = FastAPI(title="Pediatric Growth & Nutrition Agent API", version="1.0")
 
+# Add middleware
+app.add_middleware(ErrorHandlerMiddleware)
+
+# Include routers
 app.include_router(health.router, prefix="/api/v1/health", tags=["health"])
+app.include_router(user.router, prefix="/api/v1/users", tags=["users"])
+app.include_router(child.router, prefix="/api/v1/children", tags=["children"])
 
 @app.get("/")
 def root():
