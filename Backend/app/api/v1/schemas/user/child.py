@@ -14,6 +14,8 @@ class Child(Base):
 
     parent_id = Column(Integer, ForeignKey("users.id"))
     parent = relationship("User", back_populates="children")
+    growth_logs = relationship("Growth", back_populates="child")  # type: ignore
+    nutrition_logs = relationship("Nutrition", back_populates="child")  # type: ignore
 
 # Pydantic Schemas
 class ChildCreate(BaseModel):
